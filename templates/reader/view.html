@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script>
+</script>
+{% endblock %}
+
+{% block title %}
+viewing a feedlist
+{% endblock %}
+
+{% block content %}
+<ul id="viewing-list">
+    {% for feed in user_feed_list %}
+    <li>
+    <span class="feed-title">{{feed.title}}</span><br/>
+    <span class="alt">{{feed.url}}</span>
+    <a
+        href="http://fusion.google.com/add?source=atgs&feedurl={{feed.url.url}}">
+        <img src="http://buttons.googlesyndication.com/fusion/add.gif" class="addicon" border="0" alt="Add to Google">
+    </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

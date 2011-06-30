@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script type="text/javascript">
+    $(function() {
+        $('.feed :button').click(function(){$(this).parent().remove();});
+    });
+</script>
+{% endblock %}
+
+{% block title %}
+share your collection
+{% endblock %}
+
+{% block content %}
+
+<form method="POST" action="">
+<ul>
+{% for feed in feedList %}
+<div class="feed">
+    <li>{{feed}}</li>
+    <input type="button" value="delete me"></input>
+    <input type="hidden" name="feed_title[]" value="{{feed.0}}"></input>
+    <input type="hidden" name="feed_url[]" value="{{feed.1}}"></input>
+</div>
+{% endfor %}
+</ul>
+<input type="submit" />
+</form>
+
+{% endblock %}

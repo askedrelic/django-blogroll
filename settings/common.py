@@ -54,3 +54,6 @@ TEMPLATE_LOADERS = (
 TEMPLATE_DIRS = (
     PROJECT_ROOT / 'templates',
 )
+
+OAUTH_KEY    = 'www.asktherelic.com'
+OAUTH_SECRET = 'WtAfQlY4+MJqsge45b9VuwNn'
