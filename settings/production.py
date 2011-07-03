@@ -6,6 +6,13 @@ TEMPLATE_DEBUG = DEBUG
 SERVER_HOST = "http://localhost:8000/"
 
 ## Database Setup
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': SITE_ROOT / 'db' / 'production.sqlite3'
+    }
+}
+## Database Setup
 DATABASE_ENGINE = 'sqlite3'
 DATABASE_NAME = SITE_ROOT / 'db' / 'production.sqlite3'
 

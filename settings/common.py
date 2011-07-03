@@ -9,7 +9,6 @@ ROOT_URLCONF = 'urls'
 
 sys.path.append(SITE_ROOT)
 sys.path.append(PROJECT_ROOT / 'apps')
-sys.path.append(PROJECT_ROOT / 'libs')
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
