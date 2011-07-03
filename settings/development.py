@@ -1,7 +1,6 @@
 from common import *
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = TEMPLATE_DEBUG = True
 
 SERVER_HOST = "http://localhost:8000/"
 
