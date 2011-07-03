@@ -24,7 +24,6 @@ DEVSERVER_MODULES = (
     #'devserver.modules.profile.LineProfilerModule',
 )
 
-
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -40,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'django_extensions',
+    #'django_extensions',
     'devserver',
     'apps.index',
     'apps.reader',
