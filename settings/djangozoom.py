@@ -1,6 +1,6 @@
 from common import *
 
-DEBUG = TEMPLATE_DEBUG = True
+DEBUG = TEMPLATE_DEBUG = False
 
 SERVER_HOST = "http://blogroll.djangozoom.net/"
 
@@ -8,7 +8,7 @@ SERVER_HOST = "http://blogroll.djangozoom.net/"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': SITE_ROOT / 'db' / 'dev.sqlite3',
+        'NAME': SITE_ROOT / 'db' / 'production.sqlite3'
     }
 }
 
