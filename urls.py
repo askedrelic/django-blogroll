@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 
 #DEBUG Let django host static content during development.
 import settings
-if settings.development.DEBUG:
+if hasattr(settings, "development"):
     urlpatterns += patterns('',
         (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.development.MEDIA_ROOT}),
     )
