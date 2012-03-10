@@ -8,7 +8,7 @@ SERVER_HOST = "http://localhost:8000/"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': SITE_ROOT / 'db' / 'dev.sqlite3',
+        'NAME': SITE_ROOT / 'db' / 'development.sqlite3',
     }
 }
 
