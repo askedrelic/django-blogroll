@@ -49,7 +49,10 @@ def share(request):
         return redirect(db_feedlist)
     elif request.GET.get('oauth_verifier', False) and request.GET.get('oauth_token', False):
         #try getting the token key and secret from session
-        #what is session doesn't exist?
+
+        # NOTE: can get into state where session can't be found? or token can't
+        # be found? try waiting?
+        # import IPython; IPython.embed()
         token    = request.GET['oauth_token']
         secret   = request.session[token]
         verifier = request.GET['oauth_verifier']
@@ -62,12 +65,10 @@ def share(request):
             if feed.feedUrl is not None:
                 feedList.append((feed.title, feed.feedUrl))
         #request.session['user_feed_list'] = feedList
-
-        #from IPython.Shell import IPShellEmbed; shell = IPShellEmbed(); shell();
         #request.session['user_feed_list'] = user_feed_list
         return direct_to_template(request, 'reader/share.html', locals())
     else:
-        return direct_to_template(request, 'reader/share.html', locals())
+        # return direct_to_template(request, 'reader/share.html', locals())
         return HttpResponse(500)
 
 def createFeeds(feedList = list()):
