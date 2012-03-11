@@ -24,7 +24,9 @@ def startAuth(request):
         auth.setCallback(callback)
 
         token, token_secret = auth.setAndGetRequestToken()
+        print token, token_secret
         request.session[token] = token_secret
+        print auth.buildAuthUrl()
         return HttpResponseRedirect(auth.buildAuthUrl())
     else:
         return HttpResponse(500)
@@ -68,8 +70,8 @@ def share(request):
         #request.session['user_feed_list'] = user_feed_list
         return direct_to_template(request, 'reader/share.html', locals())
     else:
-        # return direct_to_template(request, 'reader/share.html', locals())
-        return HttpResponse(500)
+        return direct_to_template(request, 'reader/share.html', locals())
+        # return HttpResponse(500)
 
 def createFeeds(feedList = list()):
     db_feedlist, created = FeedList.objects.get_or_create(name='test')
