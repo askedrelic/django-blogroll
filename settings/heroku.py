@@ -4,6 +4,10 @@ DEBUG = TEMPLATE_DEBUG = False
 
 SERVER_HOST = "http://radiant-stream-3101.herokuapp.com/"
 
+import os
+import sys
+import urlparse
+
 ## Database Setup
 # Register database schemes in URLs.
 urlparse.uses_netloc.append('postgres')
